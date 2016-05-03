@@ -1,0 +1,10 @@
+python-dateutil
+tld
+requests
+patsy
+toolz
+pyyaml
+celery
+boto3
+pytest
+keras

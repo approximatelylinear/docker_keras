@@ -1,0 +1,26 @@
+version: '2'
+services:
+  keras:
+    container_name: keras
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    depends_on:
+      - theano
+    ports:
+      - "5050:5050"
+    environment:
+      TZ: America/Chicago
+      ENV: local
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+  theano:
+    image: kaixhin/theano
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
